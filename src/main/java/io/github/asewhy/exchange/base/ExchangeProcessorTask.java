@@ -26,7 +26,7 @@ public abstract class ExchangeProcessorTask<T> {
 
     /** Свойства по умолчанию */
     private static final ExchangeProcessorTaskProperties DEFAULT_PROPERTIES = new DefaultExchangeProcessorTaskProperties(Charset.forName("Windows-1251"), ';',
-            CSVWriter.NO_QUOTE_CHARACTER, CSVWriter.DEFAULT_ESCAPE_CHARACTER, CSVWriter.DEFAULT_LINE_END, "%.2f");
+            CSVWriter.DEFAULT_QUOTE_CHARACTER, CSVWriter.DEFAULT_ESCAPE_CHARACTER, CSVWriter.DEFAULT_LINE_END, "%.2f");
 
     /** Набор полей для экспорта */
     private final Collection<String> fields;
@@ -150,7 +150,7 @@ public abstract class ExchangeProcessorTask<T> {
      */
     private String convertValue(Object value, String field) {
         if(value instanceof String) {
-            return StringEscapeUtils.escapeCsv((String) value);
+            return (String) value;
         }
 
         if(value instanceof Double) {

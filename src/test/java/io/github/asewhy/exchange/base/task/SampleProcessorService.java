@@ -22,7 +22,7 @@ public class SampleProcessorService extends ExchangeProcessorService<SampleData,
 
     /** Свойства экспортера для теста */
     private static final ExchangeProcessorTaskProperties DEFAULT_PROPERTIES = new DefaultExchangeProcessorTaskProperties(StandardCharsets.UTF_8, ';',
-            CSVWriter.NO_QUOTE_CHARACTER, CSVWriter.DEFAULT_ESCAPE_CHARACTER, CSVWriter.DEFAULT_LINE_END, "%.2f");
+            CSVWriter.DEFAULT_QUOTE_CHARACTER, CSVWriter.DEFAULT_ESCAPE_CHARACTER, CSVWriter.DEFAULT_LINE_END, "%.2f");
 
     /**
      * Конструктор
